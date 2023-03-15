@@ -1,0 +1,89 @@
+<section *ngIf="!showLogin">
+  <div class="container" >
+     <div class="row">
+      <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 p-0">
+          <div class="registerWrapper">
+
+              <form action="" method="" #registerForm="ngForm" id="registerForm" name="registerForm" *ngIf="register_Obj">
+
+                  <div class="form-group mb-3">
+                      <label>Email</label>
+                      <input type="email" class="form-control" name="email" [(ngModel)]="register_Obj.email" #email="ngModel"  placeholder="Email ID" [class.is-invalid]="email.touched && email.invalid" required>
+                      <div class="invalid-feedback">Please enter valid Email ID!</div>
+                  </div>
+                  <div class="form-group mb-3">
+                      <label>Password</label>
+                      <input [type]="passType" class="form-control" name="password" [(ngModel)]="register_Obj.password" #password="ngModel" placeholder="Password" minlength="4" required
+                      placeholder="Password" [class.is-invalid]="password.touched && password.invalid">
+                      <div class="invalid-feedback">Password lenght must be 4 or more!</div>
+
+                  </div>
+
+
+                  <div class="form-group text-center">
+                      <div class="form-check">
+                          <label class="form-check-label" for="flexCheckDefault">
+                           I agree to the <a  routerLink="/privacy-terms" target="_blank" class="text-dark"><strong>privacy policy & terms</strong></a>
+                          </label>
+                          <div class="invalid-feedback">Please accept the terms and conditions.</div>
+                        </div>
+                  </div>
+                  <div class="form-group text-center">
+                      <button type="submit" class="btn btn-dark w-75 mt-4" [disabled]=" !register_Obj.email || !register_Obj.password " (click)="signUp()">Sign Up</button>
+                  </div>
+                  <div class="form-group text-center">
+                    <div class="form-check">
+                        <label  >
+                          Already Having Account Click<a  (click)="openLogin()" style="color: darkblue; cursor: pointer;"> Here</a>
+                        </label>
+                      </div>
+                </div>
+              </form>
+
+          </div>
+      </div>
+
+     </div>
+  </div>
+</section>
+
+
+
+
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" *ngIf="showLogin">
+  <div class="loginWrapper">
+      <div class="logo-header">
+          USER LOGIN
+      </div>
+      <form action="" method="" #loginForm="ngForm" id="loginForm" name="loginForm" *ngIf="login_Obj">
+  <p style="color: red;">{{authError}}</p>
+
+          <div class="form-group mb-3">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" [(ngModel)]="login_Obj.email" #email="ngModel"  placeholder="Email ID" required [class.is-invalid]="email.touched && email.invalid">
+              <div class="invalid-feedback">Please enter valid Email ID!</div>
+          </div>
+          <div class="form-group mb-3">
+              <label class="block-element">Password <a routerLink="/forgetpassword" class="float-end black-link" style="margin-top: 7px;">Forgot Password?</a></label>
+              <input [type]="passType" class="form-control" name="password" [(ngModel)]="login_Obj.password" #password="ngModel" placeholder="Password" minlength="4" required
+              placeholder="Password" [class.is-invalid]="password.touched && password.invalid">
+              <div class="invalid-feedback">Password lenght must be 4 or more!</div>
+
+          </div>
+
+          <div class="form-group text-center">
+              <button type="submit" class="btn btn-dark w-75 mt-4" [disabled]="loginForm.invalid || !login_Obj.email|| !login_Obj.password" (click)="loginUser()">Login</button>
+          </div>
+          <div class="form-group text-center">
+            <div class="form-check">
+                <label  >
+                Not Having Account Click<a  (click)="openSignup()" style="color: darkblue; cursor: pointer;"> Here</a>
+                </label>
+              </div>
+        </div>
+
+      </form>
+
+  </div>
+
+</div>

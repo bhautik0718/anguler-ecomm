@@ -1,0 +1,35 @@
+<div class="cart-page">
+    <h1>cart-page</h1>
+    <div class="d-flex">
+    <div class="col-sm-8 details">
+        <ul *ngFor="let cart of cartData">
+            <li>
+                <img class="productImage" [src]="base_url+'/'+cart.cart_image" height="100">
+            </li>
+            <li>
+                <span>{{cart.name}}</span>
+            </li>
+            <li>
+                <span>Price:{{cart.price}}</span>
+            </li>
+            <li>
+                <span>Quantity: {{cart.quantity}}</span>
+            </li>
+            <li>
+                <button class="btn btn-danger" (click)="removeToCart(cart._id)">Remove to Cart</button>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-4 summary p-4">
+        <h3>summary</h3>
+        <ul class="text-center">
+            <li><span>Amount:-</span><samp>{{priceSummary.price}}</samp></li>
+            <li><span>Tax:-</span><samp>{{priceSummary.tax}}</samp></li>
+            <li><span>Delivery:-</span><samp>{{priceSummary.delivery}}</samp></li>
+            <li><span>Discount:-</span><samp>{{priceSummary.discount}}</samp></li>
+            <li><span><h4>Total:-</h4></span><samp><h4>{{priceSummary.total}}</h4></samp></li>
+            <button class="btn btn-success col-10 " (click)="checkout()">Checkout</button>
+        </ul>
+    </div>
+</div>
+</div>

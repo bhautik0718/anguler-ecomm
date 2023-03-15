@@ -1,0 +1,41 @@
+
+   <!-- ========= content items ========= -->
+   <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="table_data">
+      <figure class="card card-product-grid">
+      <div class="img-wrap">
+        <a routerLink="/product-details/{{table_data._id}}">
+        <img height="500" [src]="base_url +'/'+ table_data.employee_image">
+      </a>
+      </div>
+      <figcaption class="info-wrap border-top">
+        <div class="price-wrap">
+        <strong class="price">Name: {{table_data.name}}</strong>
+          <br>
+        <strong class="price">Price: ${{table_data.price}}</strong>
+
+        <!-- <del class="price-old">$170.00</del> -->
+        </div> <!-- price-wrap.// -->
+        <strong class="price">Category: {{table_data.category}}</strong>
+
+        <p class="title mb-2">Product Description : {{table_data.description}}</p>
+        <div class="quantity-group">
+          <button (click)="handleQuantity('min')">-</button>
+          <input type="text" value="{{productQuantity}}">
+          <button (click)="handleQuantity('plus')">+</button>
+        </div>
+        <a  class="btn btn-primary" *ngIf="!removeCart" (click)="addToCart()">Add to cart</a>
+        <a  class="btn btn-primary" *ngIf="removeCart" (click)="removeToCart(table_data._id)">Remove To Cart</a>
+
+        <a href="#" class="btn btn-danger">Buy Now</a>
+
+
+        <!-- <a routerLink="/product-details/{{table_data._id}}" style="margin-left: 10px;">View Details</a> -->
+
+        <!-- <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a> -->
+      </figcaption>
+      </figure>
+    </div> <!-- col end.// -->
+
+
+  </div> <!-- row end.// -->

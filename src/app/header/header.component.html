@@ -1,0 +1,113 @@
+<body>
+  <!-- HEADER -->
+  <header>
+      <!-- TOP HEADER -->
+      <!-- /TOP HEADER -->
+
+      <!-- MAIN HEADER -->
+      <div id="header">
+          <!-- container -->
+          <div class="container">
+              <!-- row -->
+              <ul class="header-links pull-left">
+                <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+            </ul>
+            <ul class="header-links pull-right ">
+                <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+                <li><a  routerLink="/seller"><i class="fa fa-user-o"></i> Seller Accouct</a></li>
+
+                <li><a *ngIf="menuType=== 'seller'" routerLink="/seller-add-product"> AddProduct</a></li>
+
+                <li><a *ngIf="menuType=== 'seller'" routerLink="/seller-home"> Product List</a></li>
+
+                <li><a *ngIf="menuType=== 'seller'" (click)="logout()"> logout</a></li>
+            </ul>
+
+                  <!-- LOGO -->
+
+                      <div class="header-logo">
+                          <a href="#" class="logo">
+                              <img src="http://127.0.0.1:5500/img/logo.png" alt="">
+                          </a>
+                      </div>
+
+                  <!-- /LOGO -->
+
+                  <!-- SEARCH BAR -->
+
+                  <!-- /SEARCH BAR -->
+
+                  <!-- ACCOUNT -->
+                  <div class="col-md-12 clearfix" style="margin-left: 100px;">
+                      <div class="header-ctn">
+                          <!-- Wishlist -->
+                          <div>
+                            <a routerLink="user-auth" *ngIf="menuType=== ''">
+                                <i class="fa fa-heart-o"></i>
+                                <span>User Account</span>
+                            </a>
+                        </div>
+                        <div>
+                          <a  *ngIf="menuType=== 'user'" (click)="userlogout()">
+                              <i class="fa fa-heart-o"></i>
+                              <span style="cursor: pointer;">logout</span>
+                          </a>
+                      </div>
+                      <div>
+                        <a  *ngIf="menuType=== 'user'" routerLink="my-orders">
+                            <i class="fa fa-heart-o"></i>
+                            <span>My Orders</span>
+                        </a>
+                    </div>
+                <!-- <a style="color: white;"><span></span> </a> -->
+
+                <div class="dropdown"  *ngIf="menuType=== 'user'" [routerLink]="cartItems>0?'cart-page' : null" style="cursor: pointer;">
+                  <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                      <i class="fa fa-shopping-cart"></i>
+                      <span>Your Cart</span>
+                      <div class="qty">{{cartItems}}</div>
+                  </a>
+
+              </div>
+                          <div>
+                              <a routerLink="/">
+                                  <i class="fa fa-heart-o"></i>
+                                  <span>Home Page</span>
+                                  <!-- <div class="qty">2</div> -->
+                              </a>
+                          </div>
+                          <!-- /Wishlist -->
+
+                          <!-- Cart -->
+                          <div class="dropdown" *ngIf="menuType=== ''">
+                              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                  <i class="fa fa-shopping-cart"></i>
+                                  <span>Your Cart</span>
+                                  <div class="qty">{{cartItems}}</div>
+                              </a>
+
+                          </div>
+                          <!-- /Cart -->
+
+                          <!-- Menu Toogle -->
+                          <div class="menu-toggle">
+                              <a href="#">
+                                  <i class="fa fa-bars"></i>
+                                  <span>Menu</span>
+                              </a>
+                          </div>
+                          <!-- /Menu Toogle -->
+                      </div>
+                  </div>
+                  <!-- /ACCOUNT -->
+
+              <!-- row -->
+          </div>
+          <!-- container -->
+      </div>
+      <!-- /MAIN HEADER -->
+  </header>
+  <!-- /HEADER -->
+</body>

@@ -1,0 +1,47 @@
+<div class="cart-page">
+  <h1>My-Orders</h1>
+  <div class="d-flex">
+    <div class="col-sm-8 details">
+        <ul >
+            <li>
+                Orders
+            </li>
+            <li>
+                <span>Order Id</span>
+            </li>
+            <li>
+                <span>Price</span>
+            </li>
+            <li>
+                <span>Status</span>
+            </li>
+            <li>
+                <span>Cancel Order</span>
+            </li>
+        </ul>
+    </div>
+
+  </div>
+  <div class="d-flex" *ngFor="let item of orderData">
+  <div class="col-sm-8 details">
+      <ul >
+          <li>
+              <img class="productImage" src="https://www.pngmart.com/files/7/Cart-PNG-Transparent.png" height="100">
+          </li>
+          <li>
+              <span>{{item._id}}</span>
+          </li>
+          <li>
+              <span>{{item.totalPrice}}</span>
+          </li>
+          <li>
+              <span>In Progress</span>
+          </li>
+          <li>
+              <button class="btn btn-danger" (click)="cancelOrder(item._id)" >Cancel Order</button>
+          </li>
+      </ul>
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,81 @@
+
+
+<!-- <div class="modal-header custom-modal-header">
+  <div style="font-size: 20px;">
+    {{dialogType == 'update' ? 'Update Product Category' : 'Add Product Category'}}
+  </div>
+
+</div> -->
+<div class="container">
+  <section class="vh-100" style="background-color: #eee;" >
+    <div class="container h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-4">
+              <div class="row justify-content-center">
+                <div style="text-align: center;">
+                  <h1>CHECK OUT</h1>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <div style="margin-left: 30px;">
+                  <h3>Add Shipping Address</h3>
+
+                  </div>
+                  <form class="mx-1 mx-md-4" #product="ngForm" >
+                    <label class="form-label" for="form3Example3c">Email</label>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c" class="form-control"
+                        name="email" #email="ngModel" [(ngModel)]="formData.email" />
+                      </div>
+                    </div>
+
+
+                    <label class="form-label" for="form3Example4c"> Mobile Number</label>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="number" id="form3Example4c" class="form-control"
+                        name="phone" #phone="ngModel" [(ngModel)]="formData.phone" />
+                      </div>
+                    </div>
+                    <p><label for="w3review">Address</label></p>
+                    <textarea id="w3review" name="address" #address="ngModel" [(ngModel)]="formData.address" rows="4" cols="50"></textarea>
+
+
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                      <label class="form-check-label" for="form2Example3">
+                        I agree all statements in <a href="#!">Terms of service</a>
+                      </label>
+                    </div>
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="button"  class="btn btn-primary btn-lg" (click)="addCheckOut()">Order Now</button>
+                      <!-- <button type="button" *ngIf="!showAdd" class="btn btn-primary btn-lg" (click)="updateProduct()">Update</button> -->
+
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                  <div style="margin-left: 30px; width: 100%;">
+                      <h2 style="margin-left: 30px;">Total Amount : ₹{{totalPrice}}</h2>
+                  <br>
+                  <div style="margin-left: 30px;">
+                      <h2>Payment Method : Pay On Delivery</h2>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+

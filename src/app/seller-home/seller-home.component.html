@@ -1,0 +1,23 @@
+<div class="row" >
+  <div class="col-lg-4 col-md-6 col-sm-3" *ngFor="let item of getProduct.data?.data let i=index">
+    <figure class="card card-product-grid">
+    <div class="img-wrap">
+      <img height="100" [src]="base_url +'/'+ item.employee_image">
+    </div>
+    <figcaption class="info-wrap border-top">
+      <div class="price-wrap">
+      <strong class="price">Price: ${{item.price}}</strong>
+      </div> <!-- price-wrap.// -->
+      <p class="title mb-2">Product Name : {{item.name}}</p>
+      <p class="title mb-2">Product Category : {{item.category}}</p>
+
+      <p class="title mb-2">Product Description : {{item.description}}</p>
+
+      <button  class="btn btn-primary" routerLink="/seller-update-product/{{item._id}}">Edit</button>
+      <button  class="btn btn-danger" (click)="deleteProduct(item)">Delete</button>
+    </figcaption>
+    </figure>
+  </div> <!-- col end.// -->
+
+
+</div> <!-- row end.// -->

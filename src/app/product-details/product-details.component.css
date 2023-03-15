@@ -1,0 +1,11 @@
+.quantity-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.quantity-group button{
+  padding: 10px;
+}
+.quantity-group input{
+  width: 4%;
+  padding: 10px;
+}
